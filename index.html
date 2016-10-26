@@ -16,6 +16,19 @@ and open the template in the editor.
 
             }
         </style>
+        <script>
+            function Mudarestado(el) {
+                var display = document.getElementById(el).style.display;
+                if (display == "none")
+                    document.getElementById(el).style.display = 'block';
+                else
+                    document.getElementById(el).style.display = 'none';
+            }
+            
+            function criarConta(){
+                window.location.replace("criarContar.html");
+            }
+        </script>
     </head>
     <body>
         <div class="col-dg-12" id="nomeSite">
@@ -25,15 +38,20 @@ and open the template in the editor.
             <div class="col-dg-8 vazio">
 
             </div>
-            <div class="col-dg-2 login">
+            <div class="col-dg-2 login" id="minhaDiv">
+
+
                 <span class="span">Login</span>
-                <label>Usuario</label>
-                <input type='text'>
-                <label>Senha</label>
-                <input type='text'>
-                <input type="button" value="Logar">
-                <input type="button" value="Criar conta">
+                <input type="text" placeholder="Usuário">
+                <input type="password" placeholder="Senha">
+                <input type="button" class="btn_criarConta" value="Criar conta" onclick="criarConta()">
+                <button type="button" class="btn_logar" onclick="Mudarestado('minhaDiv')">Login</button>
             </div>
+
+
+
+
+
             <div class="col-dg-2">
 
             </div>
@@ -71,7 +89,11 @@ and open the template in the editor.
             </div>
 
             <div class="col-dg-8 cor conteudo">
-                a
+                <h1 id="tit_index"> Jogo de Detetive </h1>
+                <h2 id="txt_index">
+                    Use o seu raciocínio para encontrar todas as pistas e itens encontrados de valor e usá-los para derrotar seus inimigos.
+                </h2>
+                <img id="img2" src="img/Imagem2.jpg" alt=""/>
             </div>
 
             <div class="col-dg-2 cor2">

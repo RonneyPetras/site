@@ -6,7 +6,7 @@ and open the template in the editor.
 -->
 <html>
     <head>
-        <title>Fale Conosco</title>
+        <title>TODO supply a title</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="css/frame.css" rel="stylesheet" type="text/css"/>
@@ -16,6 +16,19 @@ and open the template in the editor.
 
             }
         </style>
+        <script>
+            function Mudarestado(el) {
+                var display = document.getElementById(el).style.display;
+                if (display == "none")
+                    document.getElementById(el).style.display = 'block';
+                else
+                    document.getElementById(el).style.display = 'none';
+            }
+            function criarConta(){
+                window.location.replace("criarContar.html");
+            }
+
+        </script>
     </head>
     <body>
         <div class="col-dg-12" id="nomeSite">
@@ -25,14 +38,14 @@ and open the template in the editor.
             <div class="col-dg-8 vazio">
 
             </div>
-            <div class="col-dg-2 login">
+            <div class="col-dg-2 login" id="minhaDiv">
+                
+                
                 <span class="span">Login</span>
-                <label>Usuario</label>
-                <input type='text'>
-                <label>Senha</label>
-                <input type='text'>
-                <input type="button" value="Logar">
-                <input type="button" value="Criar conta">
+                <input type="text" placeholder="Usuário">
+                <input type="password" placeholder="Senha">
+                <input type="button" class="btn_criarConta" value="Criar conta" onclick="criarConta()">
+                <button type="button" class="btn_logar" onclick="Mudarestado('minhaDiv')">Login</button>
             </div>
             <div class="col-dg-2">
 
@@ -72,7 +85,7 @@ and open the template in the editor.
 
             <div class="col-dg-8 cor conteudo">
                 <div>
-                    <h2>Fale Conosco</h2>
+                    <h1>Fale Conosco</h1>
                     <p></p>
                     <p>Entre em contato conosco para esclarecer dúvidas, relatar erros, dar sugestões, críticas construtivas ou elogios!</p>
                     

@@ -6,11 +6,279 @@ and open the template in the editor.
 -->
 <html>
     <head>
-        <title>TODO supply a title</title>
+        <title>Nome do site/jogo</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="css/frame.css" rel="stylesheet" type="text/css"/>
+        <link href="css/estilo.css" rel="stylesheet" type="text/css"/>
+        <style>
+            .jogo {
+
+            }
+        </style>
+        <script>
+            function Mudarestado(el) {
+                var display = document.getElementById(el).style.display;
+                if (display == "none")
+                    document.getElementById(el).style.display = 'block';
+                else
+                    document.getElementById(el).style.display = 'none';
+            }
+            function criarConta(){
+                window.location.replace("criarContar.html");
+            }
+
+        </script>
     </head>
     <body>
-        <div>TODO write content</div>
+        <div class="col-dg-12" id="nomeSite">
+            <span >"Nome do Jogo"</span>
+        </div>
+        <div class="col-dg-12 ">
+            <div class="col-dg-8 vazio">
+
+            </div>
+            <div class="col-dg-2 login" id="minhaDiv">
+                
+                
+                <span class="span">Login</span>
+                <input type="text" placeholder="Usuário">
+                <input type="password" placeholder="Senha">
+                <input type="button" class="btn_criarConta" value="Criar conta">
+                <button type="button" class="btn_logar" onclick="Mudarestado('minhaDiv')">Login</button>
+            </div>
+            <div class="col-dg-2 vazio">
+
+            </div>
+        </div>
+
+        <div id="caixaMenu" class="col-dg-12">
+            <div class="col-dg-2 vazio">
+
+            </div>
+
+            <div class="col-dg-8 ">
+                <ul id="menu" >
+                    <li class="col-dg-3">
+                        <a href="index.html">Inicio</a>
+                    </li>
+                    <li class="col-dg-3">
+                        <a href="jogar.html">Jogar</a>
+                    </li>
+                    <li class="col-dg-3">
+                        <a href="comoJogar.html">Como Jogar</a>
+                    </li>
+                    <li class="col-dg-3">
+                        <a href="rankings.html">Rankings</a>
+                </ul>
+            </div>
+
+            <div class="col-dg-2">
+
+            </div>
+        </div>
+
+        <div id="caixaJogo" class="col-dg-12">
+            <div class="col-dg-2 cor2">
+
+            </div>
+
+            <div class="col-dg-8 cor conteudo">
+                <h1> Criar Usuário </h1>
+                <form action="Script_do_Formulario.php" method="post">
+
+                    <!-- DADOS PESSOAIS-->
+                    <fieldset>
+                        <legend>Dados Pessoais</legend>
+                        <table cellspacing="10">
+                            <tr>
+                                <td>
+                                    <label for="nome">Nome: </label>
+                                </td>
+                                <td align="left">
+                                    <input type="text" name="email">
+                                </td>
+                                <td>
+                                    <label for="sobrenome">Sobrenome: </label>
+                                </td>
+                                <td align="left">
+                                    <input type="text" name="sobrenome">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label> Data de Nascimento: </label>
+                                </td>
+                                <td align="left">
+                                    <input type="text" name="dia" size="2" maxlength="2" value="dd"> 
+                                    <input type="text" name="mes" size="2" maxlength="2" value="mm"> 
+                                    <input type="text" name="ano" size="4" maxlength="4" value="aaaa">
+                                </td>
+                            </tr>
+
+                        </table>
+                    </fieldset>
+
+                    <br />
+                    <!-- ENDEREÇO -->
+                    <fieldset>
+                        <legend>Dados de Localização</legend>
+                        <table cellspacing="10">
+                            <tr>
+                                <td align="left">
+                                    <label for="estado">Estado:</label>
+
+
+                                    <select name="estado"> 
+                                        <option value="ac">Acre</option> 
+                                        <option value="al">Alagoas</option> 
+                                        <option value="am">Amazonas</option> 
+                                        <option value="ap">Amapá</option> 
+                                        <option value="ba">Bahia</option> 
+                                        <option value="ce">Ceará</option> 
+                                        <option value="df">Distrito Federal</option> 
+                                        <option value="es">Espírito Santo</option> 
+                                        <option value="go">Goiás</option> 
+                                        <option value="ma">Maranhão</option> 
+                                        <option value="mt">Mato Grosso</option> 
+                                        <option value="ms">Mato Grosso do Sul</option> 
+                                        <option value="mg">Minas Gerais</option> 
+                                        <option value="pa">Pará</option> 
+                                        <option value="pb">Paraíba</option> 
+                                        <option value="pr">Paraná</option> 
+                                        <option value="pe">Pernambuco</option> 
+                                        <option value="pi">Piauí</option> 
+                                        <option value="rj">Rio de Janeiro</option> 
+                                        <option value="rn">Rio Grande do Norte</option> 
+                                        <option value="ro">Rondônia</option> 
+                                        <option value="rs">Rio Grande do Sul</option> 
+                                        <option value="rr">Roraima</option> 
+                                        <option value="sc">Santa Catarina</option> 
+                                        <option value="se">Sergipe</option> 
+                                        <option value="sp">São Paulo</option> 
+                                        <option value="to">Tocantins</option> 
+                                    </select>
+
+
+                                    <label for="cidade">Cidade: </label>
+
+                                    <input type="text" name="cidade">
+                                </td>
+                            </tr>
+
+                        </table>
+                    </fieldset>
+                    <br />
+
+                    <!-- DADOS DE LOGIN -->
+                    <fieldset>
+                        <legend>Dados de login</legend>
+                        <table cellspacing="10">
+                            <tr>
+                                <td>
+                                    <label for="email">E-mail: </label>
+                                </td>
+                                <td align="left">
+                                    <input type="text" name="email">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label for="imagem">Imagem de perfil:</label>
+                                </td>
+                                <td>
+                                    <input type="file" name="imagem" >
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label for="login">Login de usuário: </label>
+                                </td>
+                                <td align="left">
+                                    <input type="text" name="login">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label for="pass">Senha: </label>
+                                </td>
+                                <td align="left">
+                                    <input type="password" name="pass">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label for="passconfirm">Confirme a senha: </label>
+                                </td>
+                                <td align="left">
+                                    <input type="password" name="passconfirm">
+                                </td>
+                            </tr>
+                        </table>
+                    </fieldset>
+                    <br />
+                    <center>
+                        <input type="submit">
+                        <input type="reset" value="Limpar">
+                    </center>
+                    
+                </form>
+            </div>
+
+            <div class="col-dg-2 cor2">
+
+            </div>
+
+        </div>
+
+        <div class="col-dg-12"></div>
+
+        <div id="caixaRodape" class="col-dg-12">
+
+            <div class="col-dg-12">
+                <div class="col-dg-2 vazio"></div>
+
+                <div class="col-dg-8 rodape">
+                    <div class="col-dg-1 vazio"></div>
+                    <div class="col-dg-3">
+                        <h3>Sobre</h3>
+                        <ul>
+                            <li><a href="quemsomos.html">Quem somos</a></li>
+                            <li><a href="faleConosco.html">Fale Conosco</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-dg-3">
+                        <h3>Redes Sociais</h3>
+                        <ul>
+                            <li><a href="#">Facebook</a></li>
+                            <li><a href="#">Youtube</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-dg-3">
+                        <h3>Nome Jogo</h3>
+                        <ul>
+                            <li><a href="criarContar.html">Criar conta</a></li>
+                            <li><a href="jogar.html">Jogar</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-dg-2">
+                        <h3>O jogo</h3>
+                        <ul>
+                            <li><a href="comoJogar.html">Como jogar</a></li>
+                            <li><a href="rankings.html">Rankings</a></li>
+                        </ul>
+                    </div>
+
+                </div>
+
+
+                <div class="col-dg-2"></div>
+            </div>
+            <div class="col-dg-2 vazio"></div>
+            <div class="col-dg-8" id="direitos">"Nome do Jogo" | Desenvolvido para o Projeto integrador do segundo periodo da materia Sistemas para internet do IFTM</div>
+            <div class="col-dg-2"></div>
+        </div>
+
     </body>
 </html>

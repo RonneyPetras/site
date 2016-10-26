@@ -16,6 +16,19 @@ and open the template in the editor.
 
             }
         </style>
+        <script>
+            function Mudarestado(el) {
+                var display = document.getElementById(el).style.display;
+                if (display == "none")
+                    document.getElementById(el).style.display = 'block';
+                else
+                    document.getElementById(el).style.display = 'none';
+            }
+            function criarConta(){
+                window.location.replace("criarContar.html");
+            }
+
+        </script>
     </head>
     <body>
         <div class="col-dg-12" id="nomeSite">
@@ -25,14 +38,14 @@ and open the template in the editor.
             <div class="col-dg-8 vazio">
 
             </div>
-            <div class="col-dg-2 login">
+            <div class="col-dg-2 login" id="minhaDiv">
+                
+                
                 <span class="span">Login</span>
-                <label>Usuario</label>
-                <input type='text'>
-                <label>Senha</label>
-                <input type='text'>
-                <input type="button" value="Logar">
-                <input type="button" value="Criar conta">
+                <input type="text" placeholder="Usuário">
+                <input type="password" placeholder="Senha">
+                <input type="button" class="btn_criarConta" value="Criar conta" onclick="criarConta()">
+                <button type="button" class="btn_logar" onclick="Mudarestado('minhaDiv')">Login</button>
             </div>
             <div class="col-dg-2">
 
@@ -71,12 +84,12 @@ and open the template in the editor.
             </div>
 
             <div class="col-dg-8 cor conteudo">
-                
-                    <h2>Quem Somos</h2>
+                <div>
+                    <h1>Quem Somos</h1>
                     <p></p>
                     <p>O "nome do jogo/site" é um projeto constituído por <b>Ariel Vieira</b>, <b>Eduardo Rodrigues</b>, <b>Flavio Santos</b>, <b>Gustavo Henrique</b>, e por <b>Rooney Petras</b>  </p>
                     <p>O projeto consiste no desenvolvimento de uma aplicação web com a finalidade de aplicar e melhorar os conhecimentos que os alunos estão aprendendo no curso de Sistemas para Internet no IFTM</p>
-                
+                </div>
             </div>
 
             <div class="col-dg-2 cor2">

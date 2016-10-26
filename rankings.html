@@ -16,6 +16,19 @@ and open the template in the editor.
 
             }
         </style>
+        <script>
+            function Mudarestado(el) {
+                var display = document.getElementById(el).style.display;
+                if (display == "none")
+                    document.getElementById(el).style.display = 'block';
+                else
+                    document.getElementById(el).style.display = 'none';
+            }
+            function criarConta(){
+                window.location.replace("criarContar.html");
+            }
+
+        </script>
     </head>
     <body>
         <div class="col-dg-12" id="nomeSite">
@@ -25,14 +38,14 @@ and open the template in the editor.
             <div class="col-dg-8 vazio">
 
             </div>
-            <div class="col-dg-2 login">
+            <div class="col-dg-2 login" id="minhaDiv">
+                
+                
                 <span class="span">Login</span>
-                <label>Usuario</label>
-                <input type='text'>
-                <label>Senha</label>
-                <input type='text'>
-                <input type="button" value="Logar">
-                <input type="button" value="Criar conta">
+                <input type="text" placeholder="Usuário">
+                <input type="password" placeholder="Senha">
+                <input type="button" class="btn_criarConta" value="Criar conta" onclick="criarConta()">
+                <button type="button" class="btn_logar" onclick="Mudarestado('minhaDiv')">Login</button>
             </div>
             <div class="col-dg-2">
 
@@ -70,8 +83,46 @@ and open the template in the editor.
 
             </div>
 
-            <div class="col-dg-8 cor conteudo">
-                
+            <div class="col-dg-8 cor conteudo" style="overflow-x:auto;">
+                <p id="p_ranking">Ranking dos 5 melhores jogadores</p>
+                <table class="table col-dg-12">
+                    <tr>
+                        <td class="td_pos col-dg-3">Posição</td>
+                        <td class="td_nome col-dg-3">Nome</td>
+                        <td class="td_vit col-dg-3">Vitorias</td>
+                        <td class="td_der col-dg-3">Derrotas</td>
+                    </tr>
+                    <tr>
+                        <td class="td_pos">1°</td>
+                        <td class="td_nome">Jogador1</td>
+                        <td class="td_vit">5</td>
+                        <td class="td_der">1</td>
+                    </tr>
+                    <tr>
+                        <td class="td_pos">2°</td>
+                        <td class="td_nome">Jogador2</td>
+                        <td class="td_vit">4</td>
+                        <td class="td_der">2</td>
+                    </tr>
+                    <tr>
+                        <td class="td_pos">3°</td>
+                        <td class="td_nome">Jogador3</td>
+                        <td class="td_vit">3</td>
+                        <td class="td_der">3</td>
+                    </tr>
+                    <tr>
+                        <td class="td_pos">4°</td>
+                        <td class="td_nome">Jogador4</td>
+                        <td class="td_vit">2</td>
+                        <td class="td_der">4</td>
+                    </tr>
+                    <tr>
+                        <td class="td_pos">5°</td>
+                        <td class="td_nome">Jogador5</td>
+                        <td class="td_vit">1</td>
+                        <td class="td_der">5</td>
+                    </tr>
+                </table>
             </div>
 
             <div class="col-dg-2 cor2">
